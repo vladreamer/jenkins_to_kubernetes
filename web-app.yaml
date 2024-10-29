@@ -23,7 +23,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: viveksonar/aviator:<TAG>
+      - image: vladreamer/aviator:<TAG>
         imagePullPolicy: Always
         name: myweb
 
@@ -37,7 +37,7 @@ metadata:
   namespace: pipeline-demo
 spec:
   ports:
-  - nodePort: 32223
+  - nodePort: 32222
     port: 80
     protocol: TCP
     targetPort: 80
