@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: kubectl
-    image: alpine/k8s:1.28.15
+    image: joshendriks/alpine-k8s
     command:
     - /bin/cat
     tty: true    
@@ -17,7 +17,14 @@ spec:
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
-  volumes:
+    resources:
+      requests:
+         cpu: 250m
+         memory: 128Mi
+      limits:
+         cpu: 1000m
+         memory: 256Mi
+volumes:
     - name: kaniko-secret
       secret:
         secretName: regcred
