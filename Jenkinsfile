@@ -1,9 +1,5 @@
 pipeline {
 
-  options {
-    ansiColor('xterm') //optional can be exculede form the file
-  }
-
   agent {
     kubernetes {
       yamlFile 'builder.yaml'
